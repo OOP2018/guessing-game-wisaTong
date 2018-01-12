@@ -45,4 +45,6 @@ public class WisaTongGame extends NumberGame {
 	public int getCount() {
 		return counter;
 	}
+	
+	protected int getSecret() { return secret; }
 }

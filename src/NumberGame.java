@@ -66,4 +66,8 @@ public class NumberGame {
 	public int getCount() {
 		return 0;
 	}
+	
+	protected int getSecret() {
+		return 0;
+	}
 }

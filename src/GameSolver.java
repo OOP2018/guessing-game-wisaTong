@@ -7,16 +7,29 @@
 public class GameSolver {
 	
 	/**
-	 * Play any NumberGame and return the solution by guessing a number start from 0
-	 * then guess larger number in each loop.
+	 * Play any NumberGame and return the solution by limit the range
+	 * and guess the middle number until correct.
 	 * @param game any NumberGame.
 	 * @return solution of the game
 	 */
-	public int play(NumberGame game) {
-		int solution = 0;
-		for (int i = 0;;i++) {
-			if(game.guess(i)) continue;
-			return solution;
+	public static int play(NumberGame game) {
+		int solution = game.getUpperBound()/2;
+		int lower = 0;
+		int upper = game.getUpperBound();
+		
+		boolean correct = false;
+		while(!correct) {
+			int range = upper - lower;
+			correct = game.guess(solution);
+			if (correct) return solution;
+			String message = game.getMessage().toLowerCase();
+			if(message.contains("small")) lower = solution;
+			else if (message.contains("large")) upper = solution;
+			if (upper < lower) {
+				System.out.printf("The game appears to be lying. lower=%d > upper=%d\n",  lower, upper);
+			}
+			solution = range/2 + lower;
 		}
+		return solution;
 	}
 }

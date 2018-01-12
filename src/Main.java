@@ -10,8 +10,8 @@ public class Main {
 		NumberGame game = new WisaTongGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
-		//TODO display the answer returned by play
 		System.out.println("play() returned "+solution +" you guessed " +game.getCount() + " times" );
-		//TODO display how many guesses the user made
+		System.out.println("GameSolver found " + GameSolver.play(game));
+		System.out.println("Real secret is " + game.getSecret());
 	}
 }
