@@ -16,7 +16,7 @@ public class GameConsole {
 		boolean correct = false;
 		
 		while(!correct) {
-			System.out.print("Your guess?");
+			System.out.print("Your guess? ");
 			guess = console.nextInt();
 			correct = game.guess(guess);
 			System.out.println(game.getMessage());

@@ -8,14 +8,16 @@ import java.util.Random;
  * @author Wisa Powthongchin
  *
  */
-public class GuessingGame extends NumberGame {
+public class WisaTongGame extends NumberGame {
 	
 	private int secret;
 	private int upperBound;
+	private int counter;
 	
-	public GuessingGame(int upperBound) {
+	public WisaTongGame(int upperBound) {
 		this.secret = new Random().nextInt(upperBound);
 		this.upperBound = upperBound;
+		this.counter = 0;
 	}
 	
 	public String toString() {
@@ -24,6 +26,7 @@ public class GuessingGame extends NumberGame {
 	
 	@Override
 	public boolean guess(int number) {
+		counter++;
 		if(number != secret) {
 			if(number > secret) setMessage("Your number is too large.");
 			else if (number < secret) setMessage("Your number is too small.");
@@ -35,5 +38,10 @@ public class GuessingGame extends NumberGame {
 	
 	public int getUpperBound() {
 		return upperBound;
+	}
+	
+	@Override
+	public int getCount() {
+		return counter;
 	}
 }
