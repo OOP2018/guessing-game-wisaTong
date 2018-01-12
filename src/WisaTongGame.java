@@ -24,6 +24,7 @@ public class WisaTongGame extends NumberGame {
 		return "It's time to guess the secret number!"; 
 	}
 	
+	/** Check if the input number from user is correct or not. */
 	@Override
 	public boolean guess(int number) {
 		counter++;
