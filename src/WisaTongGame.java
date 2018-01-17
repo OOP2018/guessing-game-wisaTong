@@ -14,6 +14,10 @@ public class WisaTongGame extends NumberGame {
 	private int upperBound;
 	private int counter;
 	
+	/**
+	 * Create new game object and chose secret number randomly.
+	 * @param upperBound assign the upper-bound to limit the secret number
+	 */
 	public WisaTongGame(int upperBound) {
 		this.secret = new Random().nextInt(upperBound);
 		this.upperBound = upperBound;
