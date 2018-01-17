@@ -19,15 +19,16 @@ public class GameSolver {
 		
 		boolean correct = false;
 		while(!correct) {
-			int range = upper - lower;
 			correct = game.guess(solution);
 			if (correct) return solution;
+			
 			String message = game.getMessage().toLowerCase();
 			if(message.contains("small")) lower = solution;
 			else if (message.contains("large")) upper = solution;
 			if (upper < lower) {
 				System.out.printf("The game appears to be lying. lower=%d > upper=%d\n",  lower, upper);
 			}
+			int range = upper - lower;
 			solution = range/2 + lower;
 		}
 		return solution;
