@@ -28,7 +28,7 @@ public class CounterView implements java.util.Observer {
 		label.setFont(new Font("Arial", 80.0));
 		label.setAlignment(Pos.CENTER);
 		root.getChildren().add(label);
-		Scene scene = new Scene(root);
+		Scene scene = new Scene(root, 200 , 200);
 		stage.setScene(scene);
 		stage.setTitle("Count");
 		stage.sizeToScene();
